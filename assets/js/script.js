@@ -3,7 +3,7 @@ const heroButton = document.querySelector(".hero button");
 const modalContainer = document.querySelector(".modal-container");
 const modalClose = document.querySelector(".modal-close");
 const contactForm = document.querySelector("form");
-const formMessage = document.querySelector("#form-message");
+const formMessage = document.querySelector(".formMessage");
 const themeToggle = document.querySelector(".theme-toggle");
 const themeIcon = themeToggle.querySelector("i");
 
@@ -24,15 +24,10 @@ modalClose.addEventListener("click", () => {
 });
 
 
-contactForm.addEventListener("submit", (event) => {
-  event.preventDefault();
+contactForm.addEventListener("submit", (e) => {
+  e.preventDefault();
 
-  const formMessage = document.createElement("p");
-
-  formMessage.textContent = "Grazie! Abbiamo ricevuto la tua richiesta.";
-  formMessage.classList.add("formMessage")
-
-  contactForm.appendChild(formMessage);
+  formMessage.hidden = false;
 
   contactForm.reset();
 });
